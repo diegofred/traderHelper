@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Coin market cap</th>
+      <th>Cryptomkt</th>
+      <th>Binance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coins.each do |coin| %>
+      <tr>
+        <td><%= coin.name %></td>
+        <td><%= coin.symbol %></td>
+        <td><%= coin.coin_market_cap_id %></td>
+        <td><%= coin.cryptomkt_id %></td>
+        <td><%= coin.binance_id %></td>
+        <td><%= link_to 'Show', coin %></td>
+        <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
+        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coin', new_coin_path %>
