@@ -20,20 +20,20 @@ module CoinMarketCap
             coins << parse_coin_listing(ca)
         end
       else
-        # this just raises the net/http response that was raised
-        ParametroPMU.instance.log_pmu.error('Ocurrio un error al buscar en pmu ' + response.response.to_s + ". query_uri = #{query_uri} ")
+
+     
       end
 
       coins
-end
-
-    def self.parse_coin_listing(data)
-      c = Coin.new
-      c.id = data['id']
-      c.name = data['name']
-      c.symbol = data['symbol']
-      c.website_slug = data['website_slug']
-      c
     end
+
+def self.parse_coin_listing(data)
+  c = Coin.new
+  c.id = data['id']
+  c.name = data['name']
+  c.symbol = data['symbol']
+  c.website_slug = data['website_slug']
+  c
+end
     end
 end
