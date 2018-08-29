@@ -3,7 +3,7 @@ class Initializator
 
     def self.populate_coins
        
-        coins = CoinMarketCap::Coin.listings.select{|x| ['btc','xlm','eth'].include? x.symbol }
+        coins = CoinMarketCap::Coin.listing.select{|x| ['btc','xlm','eth'].include? x.symbol }
  
         coins.each do|cx|
 
